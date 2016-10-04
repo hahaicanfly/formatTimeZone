@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvOriTime,tvForTime;
     Button btnFormat;
     String respTime;
+    String TAG = getPackageName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             Date date = df.parse(respTime);
             df = new SimpleDateFormat("yyyy/MM/dd HH:mm");
             df.setTimeZone(TimeZone.getDefault());
-            Log.i("AAAAAA",df.format(date));
+            Log.i(TAG,"Local time: "+df.format(date));
         } catch (ParseException e) {
             e.printStackTrace();
         }
